@@ -5,14 +5,16 @@
 	  body {
 		  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
 		  color: rgb(55, 53, 47);
-		  display: flex;
-		  flex-direction: column;
-		  align-items: center;
 	  }
 	  h1 {
 		  font-weight: 600;
 		  font-size: 30px;
 		  padding-left: 10px;
+	  }
+	  a {
+		  border-bottom: 1px solid rgb(55,53,47); 
+		  color: rgb(55, 53, 47);
+		  text-decoration: none;
 	  }
 	  td {
 		  text-align: center;
@@ -21,6 +23,62 @@
 	  th {
 		  padding-left: 10px;
 		  padding-right: 10px;
+		  font-weight: 600;
+	  }
+	  /* Tooltip container */
+	  .tooltip {
+		  position: relative;
+		  display: inline-block;
+		  border-bottom: 1px solid rgb(55,53,47); /* If you want dots under the hoverable text */
+		  cursor: pointer;
+	  }
+
+	  /* Tooltip text */
+	  .tooltip .tooltiptext {
+		  visibility: hidden;
+		  width: 200px;
+		  box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 3px 6px 0px, rgba(15, 15, 15, 0.2) 0px 9px 24px 0px;
+		  background-color: rgb(255, 255, 255);
+		  text-align: left;
+		  padding: 5px 0;
+		  border-radius: 6px;
+		  
+		  /* Position the tooltip text - see examples below! */
+		  position: absolute;
+		  z-index: 1;
+
+		  top: -5px;
+		  left: 100%;
+	  }
+
+	  .tooltiptext > ul {
+		  list-style-type: none;
+		  margin-block-start: 0px;
+		  margin-block-end: 0px;
+		  padding-inline-start: 4px;
+		  padding-inline-end: 4px;
+	  }
+
+	  .tooltiptext > ul > li {
+		  border-radius: 4px;
+		  padding: 4px;
+		  line-height: 24px;
+	  }
+
+
+	  .tooltiptext > ul > li > a {
+		  text-decoration: none;
+		  line-height: 24px;
+		  color: rgb(55, 53, 47);
+		  border-bottom: 0px;
+	  }
+
+	  .tooltiptext > ul > li:hover {
+		  background-color: rgba(55, 53, 47, 0.08);
+	  }
+
+	  .tooltip:hover .tooltiptext {
+		  visibility: visible;
 	  }
 	</style>
   </head>
@@ -30,7 +88,7 @@
 		<tr>
 		  <th></th>
 		  <th>Total</th>
-		  <th>ScholarTrack</th>
+		  <th><a href="https://www.google.com">ScholarTrack</a></th>
 		  <th>CHEDSS</th>
 		</tr>
 		<tr>
@@ -41,7 +99,17 @@
 		</tr>
 		<tr>
 		  <th>12/27/23</th>
-		  <td>17pts</td>
+		  <td>
+			<div class="tooltip">
+			  17pts
+			  <div class="tooltiptext">
+				<ul>
+				  <li><a href="https://google.com">STKB-7881 [2]</a></li>
+				  <li><a href="https://google.com">STKB-7671 [2]</a></li>
+				</ul>
+			  </div>
+			</div>
+		  </td>
 		  <td>8pts</td>
 		  <td>9pts</td>
 		</tr>
